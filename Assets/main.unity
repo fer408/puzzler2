@@ -654,7 +654,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.94, y: -0.02, z: -12.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1828352776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1881,6 +1882,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815707736}
+--- !u!1001 &1828352775
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 437615037}
+    m_Modifications:
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 171526, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1828352776 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+  m_PrefabInternal: {fileID: 1828352775}
 --- !u!1001 &1853766208
 Prefab:
   m_ObjectHideFlags: 0
