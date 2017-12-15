@@ -1,12 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/* Final
- * This script represents what your GameLogic.cs script might look like at the end of the course.
- * 
- * Do not use this script directly as the file and class names are incorrect.
- */
-public class GameLogic_4_Final : MonoBehaviour
+public class GameLogic : MonoBehaviour
 {
 	public GameObject player;
 	public GameObject eventSystem;
@@ -31,7 +26,8 @@ public class GameLogic_4_Final : MonoBehaviour
 	// Variable for storing the index the player is trying to solve.
 	private int currentSolveIndex = 0;
 
-	public GameObject failAudioHolder;
+	/* Uncomment the line below during 'A Little More Feedback!' lesson.*/
+	//public GameObject failAudioHolder;
 
 	void Start()
 	{
@@ -68,22 +64,22 @@ public class GameLogic_4_Final : MonoBehaviour
 
 	// Begin the puzzle sequence.
 	public void StartPuzzle()
-	{ 
+	{
 		// Disable the start UI.
 		startUI.SetActive(false);
 
 		// Move the player to the play position.
-		iTween.MoveTo(player, 
+		iTween.MoveTo(player,
 			iTween.Hash(
-				"position", playPoint.transform.position, 
-				"time", 2, 
+				"position", playPoint.transform.position,
+				"time", 2,
 				"easetype", "linear"
 			)
 		);
 
 		// Call the DisplayPattern() function repeatedly.
 		CancelInvoke("DisplayPattern");
-		InvokeRepeating("DisplayPattern", 3, puzzleSpeed); 
+		InvokeRepeating("DisplayPattern", 3, puzzleSpeed);
 
 		// Reset the index the player is trying to solving.
 		currentSolveIndex = 0;
@@ -108,10 +104,10 @@ public class GameLogic_4_Final : MonoBehaviour
 	// Disaplay the
 	// Called from StartPuzzle() and invoked repeatingly.
 	void DisplayPattern()
-	{ 
+	{
 		// If we haven't reached the end of the display pattern.
 		if (currentDisplayIndex < puzzleOrder.Length)
-		{ 
+		{
 			Debug.Log("Display index " + currentDisplayIndex + ": Orb index " + puzzleOrder[currentDisplayIndex]);
 
 			// Disable gaze input while displaying the pattern (prevents player from interacting with the orbs).
@@ -148,10 +144,10 @@ public class GameLogic_4_Final : MonoBehaviour
 
 		// Loop throught the array to find the index of the selected sphere.
 		for (int i = 0; i < puzzleSpheres.Length; i++)
-		{ 
+		{
 			// If the passed in sphere is the sphere at the index being checked.
 			if (puzzleSpheres[i] == sphere)
-			{ 
+			{
 				Debug.Log("Looks like we hit sphere: " + i);
 
 				// Update the index of the passed in sphere to be the same as the index being checked.
@@ -165,10 +161,10 @@ public class GameLogic_4_Final : MonoBehaviour
 
 	// Check if the sphere the player selected is correct.
 	public void SolutionCheck(int playerSelectionIndex)
-	{ 
+	{
 		// If the sphere the player selected is the correct sphere.
 		if (playerSelectionIndex == puzzleOrder[currentSolveIndex])
-		{ 
+		{
 			Debug.Log("Correct!  You've solved " + currentSolveIndex + " out of " + puzzleLength);
 
 			// Update the tracker to check the next sphere.
@@ -194,10 +190,10 @@ public class GameLogic_4_Final : MonoBehaviour
 		restartUI.SetActive(true);
 
 		// Move the player to the restart position.
-		iTween.MoveTo(player, 
+		iTween.MoveTo(player,
 			iTween.Hash(
-				"position", restartPoint.transform.position, 
-				"time", 2, 
+				"position", restartPoint.transform.position,
+				"time", 2,
 				"easetype", "linear"
 			)
 		);
@@ -209,7 +205,8 @@ public class GameLogic_4_Final : MonoBehaviour
 		Debug.Log("You failed, resetting puzzle");
 
 		// Get the GVR audio source component on the failAudioHolder and play the audio.
-		failAudioHolder.GetComponent<GvrAudioSource>().Play();
+		/* Uncomment the line below during 'A Little More Feedback!' lesson.*/
+		//failAudioHolder.GetComponent<GvrAudioSource>().Play();
 
 		// Reset the index the player is trying to solving.
 		currentSolveIndex = 0;
